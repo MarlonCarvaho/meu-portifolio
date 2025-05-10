@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#Inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#Sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#Projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#Contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="Inicio" class="cabecalho">
+
+        <img src="img/unnamed.jpg" class="foto-perfil">
+        <h1>Marlon Oliveira</h1>
+        <p class="cabe">Desenvolvedor Front End em busca do full-stack</p>
+
+
+    </main>
+    <section id="Sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou um desenvolvedor em formação, atualmente focado no aprendizado de front-end e
+                em constante busca por conhecimento completo em desenvolvimento full-stack. Tenho grande interesse em
+                participar de novos projetos que me desafiem e contribuam para meu crescimento profissional. Estou
+                aberto a oportunidades de estágio, onde possa aplicar na prática o que venho aprendendo e, ao mesmo
+                tempo, continuar evoluindo como desenvolvedor.
+
+            </p>
+        </div>
+    </section>
+    <section id="Projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+      
+          <a href="https://marloncarvaho.github.io/Projeto-social/
+          " target="_blank" class="link-projeto">
+            <div class="projeto-social">
+              <img src="img/social.PNG" alt="Projeto Social" class="projeto-imagem">
+              <div class="caixa-texto-projeto">
+                <h3 class="info-projetos">Projeto Social</h3>
+                <p class="paragrafo-projetos">Um projeto que simula um celular</p>
+              </div>
+            </div>
+          </a>
+      
+          <a href="https://marloncarvaho.github.io/html-css3/desafios/desafio012/" target="_blank" class="link-projeto">
+            <div class="projeto-social">
+              <img src="img/Capturar.PNG" alt="Projeto Cordel" class="projeto-imagem">
+              <div class="caixa-texto-projeto">
+                <h3 class="info-projetos">Projeto Cordel</h3>
+                <p class="paragrafo-projetos">Um dos meus primeiros projetos que mostra minha evolução até aqui.</p>
+              </div>
+            </div>
+          </a>
+      
+          <a href="https://github.com/MarlonCarvaho?tab=repositories" target="_blank" class="link-projeto">
+            <div class="projeto-social">
+              <img src="img/git.PNG" alt="Meu Github" class="projeto-imagem">
+              <div class="caixa-texto-projeto">
+                <h3 class="info-projetos">Meu Github</h3>
+                <p class="paragrafo-projetos">Aqui você pode ver o que já desenvolvi nos meus estudos.</p>
+              </div>
+            </div>
+          </a>
+      
+        </div>
+      </section>
+      
+    <section id="Contato" class="contato">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviaarmensagem(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome" type="text" required>
+            </div>
+            <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Como posso ajudar ?" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class=" botao-form">whatsapp</button>
+        </form>
+
+    </section>
+    <script>
+        function enviaarmensagem(event) {
+         event.preventDefault()
+
+
+       const nome = document.getElementById('nome').value;
+       const mensagem = document.getElementById('mensagem').value;
+       const telefone = '5549991804565';
+       
+       const texto = `Opa, tudo bem ? Meu nome é ${nome.value} e gostaria de saber mais sobre o seu trabalho. ${mensagem.value}`;
+       const magformatada = encodeURIComponent(texto);
+
+       const url = `https://wa.me/${telefone}?text=${magformatada}`;
+       window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
